@@ -1,0 +1,15 @@
+.nav{
+    color:red;
+    width: 20%;
+    display: flex;
+    flex-direction:column;
+    border:4px solid black;
+    margin-top: 5px;
+    margin-right: 5px;
+    box-sizing: border-box;
+    margin-bottom: 30px;
+}
+.nav__links{
+    color:white;
+    text-decoration: none;
+}
