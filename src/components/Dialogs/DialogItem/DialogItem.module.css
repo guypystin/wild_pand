@@ -1,0 +1,14 @@
+.dialogs__item{
+    display:flex;
+    align-items: center;
+}
+.dialogs__active{
+    color:red;
+}
+.avatar{
+    width: 50px;
+    height: 50px;
+    border-radius: 50px;
+    background-color: black;
+    margin: 10px;
+}
