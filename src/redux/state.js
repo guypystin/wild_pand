@@ -38,38 +38,39 @@ let store = {
     getState() {
         return this._state;
     },
-    _callSubscriber(){
-    },
-    addMessage(textMessage){
-        let newMessage = {
-            id:1,
-            message: textMessage,
-            likesCount: 1,
-        };
-        this._state.dialogsPage.messagesData.push(newMessage);
-        this._callSubscriber(this._state)
-    },
-    addPost(postMessage){
-        let newPost = {
-            id:5,
-            message: postMessage,
-            likesCount : 1,
-        };
-        this._state.profilePage.postsData.push(newPost);
-        this._callSubscriber(this._state)
-    },
-    updateNewPostText(newText){
-        this._state.profilePage.newPostText = newText ;
-        this._callSubscriber(this._state)
-    },
-    updateNewMessageText(newText){
-        this._state.dialogsPage.newMessageText = newText ;
-        console.log(newText)
-        this._callSubscriber(this._state)
-    },  
     subscribe(observer){
         this._callSubscriber = observer ;
     },
+    _callSubscriber(){
+    },  
+    dispatch(action) { // { type: 'ADD-POST'}
+    
+         if(action.type === 'ADD-POST'){
+            let newPost = {
+                id:5,
+                message: this._state.profilePage.newPostText,
+                likesCount : 1,
+            };
+            this._state.profilePage.postsData.push(newPost);
+            this._callSubscriber(this._state)
+         } else if(action.type === 'UPDATE-NEW-POST-TEXT'){
+            this._state.profilePage.newPostText = action.newText ;
+            this._callSubscriber(this._state) 
+         }else if(action.type === 'ADD-MESSAGE'){
+            let newMessage = {
+                id:1,
+                message: action.textMessage,
+                likesCount: 1,
+            };
+            this._state.dialogsPage.messagesData.push(newMessage);
+            this._callSubscriber(this._state)
+         }else if(action.type === 'UPDATE-NEW-MESSAGE-TEXT'){
+            this._state.dialogsPage.newMessageText = action.newText ;
+            console.log(action.newText)
+            this._callSubscriber(this._state)
+         }
+    },
+    
 }
 
 export default store ;

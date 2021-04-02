@@ -5,7 +5,6 @@ import React from 'react';
 import classes from './Dialogs.module.css';
 
 const  Dialogs = (props) => {
-    
     let dialogsMessages = props.state.dialogsData.map( (dialog) => {
         return <DialogItem name ={dialog.name} id={dialog.id} />
     });
@@ -16,11 +15,11 @@ const  Dialogs = (props) => {
     });
     let addMessage = () => {
         let text = textArea.current.value
-        props.addMessage(text)
+        props.dispatch({type:'ADD-MESSAGE', textMessage:text})
     }
     let onMessageChange = () =>{
         let text = textArea.current.value;
-        props.updateNewMessageText(text) ;
+        props.dispatch({type:'UPDATE-NEW-MESSAGE-TEXT', newText: text }) ;
     }
     let textArea = React.createRef()
     
