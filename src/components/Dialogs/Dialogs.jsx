@@ -6,29 +6,29 @@ import { NavLink } from 'react-router-dom';
 import React from 'react';
 import classes from './Dialogs.module.css';
 
-const  Dialogs = (props) => {
+const Dialogs = (props) => {
     let textArea = React.createRef()
 
-    let dialogsMessages = props.dialogsData.map( (dialog) => {
-        return <DialogItem name ={dialog.name} id={dialog.id} />
+    let dialogsMessages = props.dialogsData.map((dialog) => {
+        return <DialogItem name={dialog.name} id={dialog.id} />
     });
-    let messagesElements = props.messagesData.map( (elem) => {
+    let messagesElements = props.messagesData.map((elem) => {
         return (
-        <Message message={elem.message} />
+            <Message message={elem.message} />
         )
     });
     let onAddMessage = () => {
         let text = textArea.current.value
         props.addMessage();
     }
-    let onMessageChange = () =>{
+    let onMessageChange = () => {
         let text = textArea.current.value;
         props.onMessageChangeActionCreator(text);
-        
+
     }
 
     return (
-        
+
         <div className={classes.dialogs}>
             <div className={classes.dialogs__items}>
                 {dialogsMessages}

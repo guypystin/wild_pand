@@ -20,7 +20,7 @@ const Nav = (props) => {
             <NavItem link="music" itemName="Music" />
             <NavItem link="Settings" itemName="Settings" />
 
-            <RecentDialogs state = {props.statex}/>
+            <RecentDialogs state = {props.state}/>
         </nav>
     )
 }

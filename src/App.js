@@ -1,13 +1,9 @@
 import './App.css';
 
 import { BrowserRouter, Route } from 'react-router-dom';
-
-import Container from './components/Container/Container';
-import Dialogs from './components/Dialogs/Dialogs.jsx';
 import DialogsContainer from './components/Dialogs/DialogsContainer';
 import Header from './components/Header/Header';
 import Music from './components/Music/Music';
-import MyPosts from './components/Profile/MyPosts/MyPosts'
 import Nav from './components/Navigation/Navigation'
 import News from './components/News/News';
 import Profile from './components/Profile/Profile';
@@ -22,11 +18,11 @@ const App = (props) => {
       
       <Header />
       <div className='osnova'>  
-        <Nav statex = {props.state.dialogsPage}/>
+        <Nav state = {props.state.dialogsPage}/>
        
         <div className = 'content'>
-          <Route path="/profile" render={() => <Profile store={props.store}  />}/>
-          <Route path="/dialogs" render={() => <DialogsContainer store = {props.store}/>}/>
+          <Route path="/profile" render={() => <Profile/>}/>
+          <Route path="/dialogs" render={() => <DialogsContainer/>}/>
           <Route path="/news" render={() => <News />}/>
           <Route path="/music" render={() => <Music />}/>
           <Route path="/settings" render={() => <Settings />}/>
