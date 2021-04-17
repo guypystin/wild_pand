@@ -20,6 +20,7 @@ const Dialogs = (props) => {
     let onAddMessage = () => {
         let text = textArea.current.value
         props.addMessage();
+        textArea.current.value = "";
     }
     let onMessageChange = () => {
         let text = textArea.current.value;

@@ -1,0 +1,27 @@
+.user{
+    display: flex;
+}
+.user__image{
+    width: 50px;
+    height: 50px;
+    background-color: black;
+}
+.info{
+    width: 80%;
+    height: 80px;
+    border: 4px solid black;
+    position: relative;
+}
+.info__name{
+    position: absolute;
+    left: 10px;
+}
+.info__status{
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+}
+.info__country{
+    position: absolute;
+    right: 10px;
+}

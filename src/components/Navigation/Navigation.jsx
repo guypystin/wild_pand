@@ -19,7 +19,7 @@ const Nav = (props) => {
             <NavItem link="news" itemName="News" />
             <NavItem link="music" itemName="Music" />
             <NavItem link="Settings" itemName="Settings" />
-
+            <NavItem link="users" itemName="Find users"/>
             <RecentDialogs state = {props.state}/>
         </nav>
     )

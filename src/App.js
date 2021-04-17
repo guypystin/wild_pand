@@ -9,6 +9,7 @@ import News from './components/News/News';
 import Profile from './components/Profile/Profile';
 import React from 'react';
 import Settings from './components/Settings/Settings';
+import Users from './components/Users/Users';
 
 const App = (props) => {
 
@@ -26,6 +27,7 @@ const App = (props) => {
           <Route path="/news" render={() => <News />}/>
           <Route path="/music" render={() => <Music />}/>
           <Route path="/settings" render={() => <Settings />}/>
+          <Route path="/users" render={() => <Users />}/>
         </div>
         
       </div>
